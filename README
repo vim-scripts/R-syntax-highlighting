@@ -1,0 +1,13 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=2984
+
+The highlighting principle is sensitivity over specificity.
+The differences between this file and the prior highlighting syntax file are:
+
+Add syntax file folding;
+Add an option to highlight the keywords based on the base package only or based on various contributed packages also;
+Add some rFunction per some distributions;
+Revise rType based on latest R (Ver 2.10.1) manual;
+Add rPreProc;
+Correct rArrow with rOperator according to R manual.
+
+Maintainer contacted but no response. So I upload a new one here.
