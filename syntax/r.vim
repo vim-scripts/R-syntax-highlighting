@@ -123,7 +123,8 @@ syn match   rOperator    /%o%\|%x%\|xor\|isTRUE/
 
 " ---------------------------------------------------------------------
 "  PreProc: {{{1
-syn keyword rPreProc     library require
+syn region rNormal matchgroup=rPreProc start=/library(/ end=/)/ contains=ALL
+syn region rNormal matchgroup=rPreProc start=/require(/ end=/)/ contains=ALL
 if !exists("g:r_base_only")
 endif
 
@@ -137,13 +138,13 @@ syn match rDelimiter /[,;]/
 
 " ---------------------------------------------------------------------
 "  Error: {{{1
-"syn region rRegion matchgroup=Delimiter start=/(/ matchgroup=Delimiter end=/)/ transparent contains=ALLBUT,rError,rBraceError,rCurlyError
-"syn region rRegion matchgroup=Delimiter start=/{/ matchgroup=Delimiter end=/}/ transparent contains=ALLBUT,rError,rBraceError,rParenError
-"syn region rRegion matchgroup=Delimiter start=/\[/ matchgroup=Delimiter end=/]/ transparent contains=ALLBUT,rError,rCurlyError,rParenError
-"syn match rError      /[)\]}]/
-"syn match rBraceError /[)}]/ contained
-"syn match rCurlyError /[)\]]/ contained
-"syn match rParenError /[\]}]/ contained
+syn region rRegion matchgroup=Delimiter start=/(/ matchgroup=Delimiter end=/)/ transparent contains=ALLBUT,rError,rBraceError,rCurlyError
+syn region rRegion matchgroup=Delimiter start=/{/ matchgroup=Delimiter end=/}/ transparent contains=ALLBUT,rError,rBraceError,rParenError
+syn region rRegion matchgroup=Delimiter start=/\[/ matchgroup=Delimiter end=/]/ transparent contains=ALLBUT,rError,rCurlyError,rParenError
+syn match rError      /[)\]}]/
+syn match rBraceError /[)}]/ contained
+syn match rCurlyError /[)\]]/ contained
+syn match rParenError /[\]}]/ contained
 
 " ---------------------------------------------------------------------
 "  Define The Default Highlighting: {{{1
